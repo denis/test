@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 set -ex
 
-curl www.google.com > log/google.html
-
-curl https://www.google.com/robots.txt > log/robots.txt
-
-curl https://www.w3schools.com/xml/note.xml > log/note.xml
+echo $TEST_RUNNER
+sleep 5
