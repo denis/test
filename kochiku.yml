@@ -4,4 +4,21 @@ log_file_globs:
   - log/*
 
 targets:
-  - type: test
+  - type: compile
+
+  - type: unit
+    requires:
+      - compile
+    workers: 2
+    glob: "{./log,./script}"
+
+  - type: integration
+    requires:
+      - compile
+    workers: 2
+    glob: "{./log,./script}"
+
+  - type: release
+    requires:
+      - unit
+      - integration
