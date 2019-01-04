@@ -7,6 +7,5 @@ workflow "New workflow" {
 
 action "GitHub Action for npm" {
   uses = "actions/npm@e7aaefe"
-  runs = "install"
-  args = "cfn-lint"
+  runs = "install cfn-lint"
 }
