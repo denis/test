@@ -1,9 +1,12 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["docker://ubuntu"]
+  resolves = [
+    "GitHub Action for npm",
+  ]
 }
 
-action "docker://ubuntu" {
-  uses = "docker://ubuntu"
-  runs = "ls -la"
+action "GitHub Action for npm" {
+  uses = "actions/npm@e7aaefe"
+  runs = "install"
+  args = "cfn-lint"
 }
