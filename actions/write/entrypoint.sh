@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-pwd
+date > DATE
