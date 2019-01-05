@@ -4,10 +4,10 @@ workflow "New workflow" {
 }
 
 action "Set date" {
-  uses = "actions/write"
+  uses = "./actions/write"
 }
 
 action "Read date" {
-  uses = "actions/read"
+  uses = "./actions/read"
   needs = ["Set date"]
 }
