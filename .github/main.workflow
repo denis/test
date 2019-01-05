@@ -1,11 +1,15 @@
 workflow "New workflow" {
   on = "push"
-  resolves = [
-    "GitHub Action for npm",
-  ]
+  resolves = ["Read date"]
 }
 
-action "GitHub Action for npm" {
-  uses = "actions/npm@e7aaefe"
-  runs = "install cfn-lint"
+action "Set date" {
+  uses = "docker://alpine"
+  runs = "date > TIMESTAMP"
+}
+
+action "Read date" {
+  uses = "docker://alpine"
+  runs = "cat TIMESTAMP"
+  needs = ["Set date"]
 }
