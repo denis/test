@@ -4,12 +4,10 @@ workflow "New workflow" {
 }
 
 action "Set date" {
-  uses = "docker://alpine"
-  runs = "date > TIMESTAMP"
+  uses = "actions/write"
 }
 
 action "Read date" {
-  uses = "docker://alpine"
-  runs = "cat TIMESTAMP"
+  uses = "actions/read"
   needs = ["Set date"]
 }
