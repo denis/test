@@ -1,4 +1,6 @@
 jobs:
   build:
+    docker:
+      - image: debian
     steps:
       - setup_remote_docker
