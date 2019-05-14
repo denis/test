@@ -5,3 +5,5 @@ log_file_globs:
 
 targets:
   - type: test
+      aa
+      bb
